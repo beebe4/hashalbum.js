@@ -12,30 +12,173 @@
     <script type="text/html" id="tweet">
         <div class="tweet">
             <div class="tweet-dogear "></div>
-            <div class="tweet-image">
+            <div class="avatar">
                 <img class="thumbnail-image" data-bind="attr: { src: image }">
             </div>
-            <div class="tweet-content">
-                <div class="tweet-row">
-                    <span class="tweet-user-name">
-                        <span class="tweet-screen-name" data-bind="text: user"></span>
-                        <span class="tweet-full-name" data-bind="text: name"></span>
-                    </span>
-                </div>
-                <div class="tweet-row tweet-text" data-bind="text: text"></div>
-                <div class="tweet-row">
-                    <span class="tweet-timestamp" data-bind="text:time"></span>
-                </div>
+            <div class="info">
+                <h2>
+                    <span data-bind="text: name"></span>
+                </h2>
+                <p>
+                    <span data-bind="text: text"></span>
+                </p>
+                <p class="date">
+                    Posted on <span data-bind="text:time"></span>
+                </p>
             </div>
         </div>
     </script>
 </head>
 <body>
-    <div class="outer-wrap">
-        <div class="outer-container">
-            <div class="totals">Tweets Tracked: <span data-bind="text: total"></span></div>
-            <div class="tweet-container" data-bind="template: { name: 'tweet', foreach: tweets }"></div>
-        </div>
+    <div id="container">
+        <header>
+            <section id='global'>
+              <h2 id='logo'>
+                <a href='/' title='Home'>Hashalbum</a>
+              </h2>
+              <form accept-charset="UTF-8" action="/search" id="search" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JSAkx7S7KHC++1jIbnZ7HfQuqLR1qGDzID7KevmAo2Q=" /></div>
+                <input class="input_text" id="topic" name="topic" suggest="yes" type="text" value="Enter a topic..." />
+                <input class="btn_search" src="/images/btn_search.png?1306484869" type="image" value="Search" />
+              </form>
+
+              <div id='account'>
+                <a class='btn_signin' href='/login'>
+                  Sign In With Twitter
+                </a>
+              </div>
+            </section>
+        </header>            
+            
+        <section id='application'>
+          <section class='album' id='content'>
+            <hgroup>
+              <div class='avatar'>
+                <a href="/photo/devlink2011/mspspeak/11096608"><img alt="@mspspeak" onerror="this.onerror = null; this.src=&quot;/images/default.png&quot;" src="http://yfrog.com/h0rxzxrj.th.jpg" /></a>
+              </div>
+              <div class='info'>
+                <h1>devlink2011</h1>
+                <h3>A collection of photos related to #devlink2011</h3>
+                <p class='date'>Created by <a href="/user/mspspeak">@mspspeak</a> on Aug 17, 2011</p>
+              </div>
+              <ul>
+                <li><a href="http://hashalbum.com/devlink2011/slideshow">Play Slideshow</a></li>
+              </ul>
+            </hgroup>
+            <article id='album_detail'>
+              <nav class='filters'>
+                <ul>
+                  <li>
+                    <a href="/devlink2011?list_type=newest" class="active">Newest</a>
+                  </li>
+                  <li>
+                    <a href="/devlink2011?list_type=popular" class="">Most Viewed</a>
+                  </li>
+                </ul>
+              </nav>
+            
+            
+        <div class="totals">Tweets Tracked: <span data-bind="text: total"></span></div>
+        <div class="tweet-container" data-bind="template: { name: 'tweet', foreach: tweets }"></div>
+
+      </article>
+      <aside id='photo_meta'>
+      <div class='share_this'>
+      <h2>Share this Album</h2>
+      <dl>
+      <dd><span class="st_facebook_vcount"></span>
+      <span class="st_twitter_vcount"></span>
+      <!-- <span class="st_email_vcount" displaytext="Email"></span>   -->
+      </dd>
+      </dl>
+      </div>
+      <div class='instruction_banner'>
+      <img alt='Instructions' src='/images/banner_instructions.png' />
+      </div>
+      <div class='stats module'>
+      <h2>Stats</h2>
+      <dl class='photos'>
+      <dt>Photos</dt>
+      <dd>2</dd>
+      </dl>
+      <dl class='views'>
+      <dt>Views</dt>
+      <dd>53</dd>
+      </dl>
+      <dl class='permalink'>
+      <dt>Permalink</dt>
+      <dd><a href="http://hashalbum.com/devlink2011">http://hashalbum.com/devlink2011</a></dd>
+      </dl>
+      </div>
+      <div class='people module'>
+      <h2>Related Albums</h2>
+      <div class='featured_person'>
+      <div class='person'>
+      <div class='info'>
+      <h3><a href="http://hashalbum.com/devlink?related=true">#devlink</a></h3>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class='people module'>
+      <h2>Important People In This Album</h2>
+      <div class='featured_person'>
+      <h3>Top Photographers</h3>
+      <div class='person'>
+      <div class='avatar'>
+      <img alt='@beebe4' src='http://api.twitter.com/1/users/profile_image/beebe4' />
+      </div>
+      <div class='info'>
+      <a href="/user/beebe4">@beebe4</a> (1)
+      </div>
+      </div>
+      <div class='person'>
+      <div class='avatar'>
+      <img alt='@mspspeak' src='http://api.twitter.com/1/users/profile_image/mspspeak' />
+      </div>
+      <div class='info'>
+      <a href="/user/mspspeak">@mspspeak</a> (1)
+      </div>
+      </div>
+      </div>
+      </div>
+      </aside>
+      </section>
+
+
+        <footer>
+          <nav>
+            <p>&copy; 2011 Londonberry, LLC. All Rights Reserved.</p>
+            <ul>
+              <li>
+                <a href='/pages/about'>About</a>
+              </li>
+              <li>
+                <a href="/albums/most_popular">Albums</a>
+              </li>
+              <li>
+                <a href='/pages/tos'>Terms of Use</a>
+              </li>
+              <li>
+                <a href='/pages/privacy'>Privacy Policy</a>
+              </li>
+            </ul>
+            <p>
+              <strong>Follow Hashalbum on</strong>
+              <a href='http://www.facebook.com/pages/Hashalbum/125039674217420'>
+                <img alt='Facebook' src='/images/icon_facebook.png' />
+              </a>
+              <a href='http://www.twitter.com/hashalbum'>
+                <img alt='Twitter' src='/images/icon_twitter.png' />
+              </a>
+            </p>
+          </nav>
+          <div id='created_by'>
+            <span>
+              Created with love by
+              <a href='http://www.londonberry.com'>Londonberry</a>
+            </span>
+          </div>
+        </footer>
     </div>
 </body>
 </html>
