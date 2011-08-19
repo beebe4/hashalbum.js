@@ -6,10 +6,7 @@ var TwitterStreamer = function(trackOptions, threshold) {
     EventEmitter.call(this); // assume behaviors of event emitter
     
     var _twit = new twitter({
-                    consumer_key: "jg0s9Qn6mhToMvcCKphA",
-                    consumer_secret: "x0gCosoUrterVLZ53DLVQBdbcRSDPqr7k5oOlEIEe4",
-                    access_token_key: "215025355-35T8qyYt3tO16K5thinWamZAC2tU7L3harnMseXQ",
-                    access_token_secret: "jsw9MsMFxV3d4rbI6kA66iGVwwQB1x2GuMY2VT3Chc" 
+                   
             });
 
         this.tweets = [];
