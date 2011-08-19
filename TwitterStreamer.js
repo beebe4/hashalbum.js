@@ -1,4 +1,5 @@
-var twitter = require('ntwitter'),
+var keys = require('./MyApiKeys.js'),
+    twitter = require('ntwitter'),
     EventEmitter = require('events').EventEmitter,
     sys = require('sys');
 
@@ -6,7 +7,10 @@ var TwitterStreamer = function(trackOptions, threshold) {
     EventEmitter.call(this); // assume behaviors of event emitter
     
     var _twit = new twitter({
-                   
+                   consumer_key: keys.consumer_key,
+                   consumer_secret: keys.consumer_secret,
+                   access_token_key: keys.access_token_key,
+                   access_token_secret: keys.access_token_secret
             });
 
         this.tweets = [];
